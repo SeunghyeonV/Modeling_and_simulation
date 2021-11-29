@@ -1,0 +1,65 @@
+Deterministic model hand simulation
+Table 21.1
+Time	  Process	   Event	      Next Event
+0	      arrivals	Starts	
+0	      server	  Starts 	
+0	      Car1	    Arrives 	
+0	      server	  Begins        service	4
+2	      Car2	    Arrives 	
+4	      server	  Completes     service	4 (Car1)
+4     	server	  Begins        service	8
+5     	Car3	    Arrives 	
+8     	Car4	    Arrives	
+8     	Server  	Completes     service	8 (Car 2)
+8     	Server  	Begins        service	12
+12    	Car5	    Arrives 	
+12     	Server  	Completes     service	12 (Car 3)
+12    	Server  	Begins        service	16
+13    	Car6	    Arrives 	
+16    	Server 	  Completes     service	16 (Car 4)
+16    	server 	  Begins        service	20
+17    	Car7 	    Arrives	
+20    	Server	  Completes     service	20 (Car 5)
+20    	Server	  Begins        service	24
+22    	Car8	    Arrives	
+23    	Car9	    Arrives	
+24	    Server	  Completes     service	24 (Car 6)
+24    	Server 	  Begins        service	28
+28    	Server	  Completes     service	28 (Car 7)
+28    	Server	  Begins        service	32
+32    	Server 	  Completes     service	36 (Car 8)
+32    	Server	  Begins        service	36
+36	    Server 	  Completes     service	36 (Car 9)
+
+Table 21.2 
+Time	  Q size
+0	        0
+2	        1
+4	        0
+5       	1
+8	        1
+12      	1
+13      	2
+16      	1
+17      	2
+20      	1
+22	      2
+23      	3
+24	      2
+28      	1
+32      	0
+36	      0
+
+Table 21.3
+Process	    Arrival   	Start Service	    Wait Time
+Car1	        0	              0	              0
+Car2	        2             	4	              2
+Car3	        5	              8	              3
+Car4	        8	              12	            4
+Car5	        12	            16	            4
+Car6	        13	            20	            7
+Car7	        17	            24	            7
+Car8	        22	            28	            6
+Car9	        23	            32	            9
+Total number of cars serviced: 9
+Car average wait time: 4.66 s
